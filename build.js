@@ -11,4 +11,15 @@ build({
   bundle: true,
   minify: !isDev,
   sourcemap: isDev,
-}).catch((err) => console.log(`Error: ${JSON.stringify(err)}`));
+  watch: {
+    onRebuild(err, result) {
+      console.log(JSON.stringify(err?.errors));
+      console.log(JSON.stringify(result?.warnings));
+    },
+  },
+})
+  .then(() => {
+    console.log("===========================================");
+    console.log(`${new Date().toLocaleString()}: watching...`);
+  })
+  .catch((err) => console.log(`Error: ${JSON.stringify(err)}`));

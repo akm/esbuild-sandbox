@@ -1,2 +1,4 @@
 node_modules
 *.code-workspace
+/public/bundle.js
+/public/bundle.js.map

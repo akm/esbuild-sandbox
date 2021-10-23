@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild src/app.tsx --bundle --minify --sourcemap --outfile=public/bundle.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "run-p watch:*",
+    "watch:build": "sh -exec 'NODE_ENV=\\\"development\\\" node ./build.js'",
+    "watch:serve": "wait-on public/index.js && reload -d public -b"
   },
   "keywords": [],
   "author": "",

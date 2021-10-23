@@ -1,4 +1,6 @@
 node_modules
 *.code-workspace
 /public/index.css
+/public/index.css.map
 /public/index.js
+/public/index.js.map
